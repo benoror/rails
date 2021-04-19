@@ -51,7 +51,7 @@ module ActiveRecord
   #     end
   #   end
   #
-  #   # Schema: messages[ id, subject ]
+  #   # Schema: messages[ id, subject, content ]
   #   class Message < ApplicationRecord
   #     include Entryable
   #     has_rich_text :content
@@ -76,7 +76,9 @@ module ActiveRecord
   #
   #   # entries/entryables/_message.html.erb
   #   <div class="message">
-  #     Posted on <%= entry.created_at %> by <%= entry.creator.name %>: <%= entry.message.content %>
+  #     <h4><%= entry.message.subject %></h4>
+  #     <p><%= entry.message.content %></p>
+  #     <i>Posted on <%= entry.created_at %> by <%= entry.creator.name %></i>
   #   </div>
   #
   #   # entries/entryables/_comment.html.erb
